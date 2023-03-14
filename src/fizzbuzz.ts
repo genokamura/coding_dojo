@@ -1,4 +1,4 @@
-export const fizzbuzz = () => {
+export const fizzbuzz = (num: number) => {
   // fizzbuzz
-  console.log('fizzbuzz');
+  console.log('1');
 }
