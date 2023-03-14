@@ -1,6 +1,10 @@
 export const fizzbuzz = (num: number) => {
   // fizzbuzz
   for (let i = 1; i <= num; i++) {
-    console.log(i.toString());
+    if (i % 3 === 0) {
+      console.log('fizz');
+    } else {
+      console.log(i.toString());
+    }
   }
 }
