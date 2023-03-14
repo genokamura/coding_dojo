@@ -27,4 +27,12 @@ describe('fizzbuzz', () => {
     expect(console.log).toBeCalled();
     expect(log.mock.calls[2][0]).toEqual('fizz');
   });
+
+  test('buzz', () => {
+    const num = 5;
+    fizzbuzz(num);
+
+    expect(console.log).toBeCalled();
+    expect(log.mock.calls[4][0]).toEqual('buzz');
+  });
 });
