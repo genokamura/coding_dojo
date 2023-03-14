@@ -1,7 +1,14 @@
 import { fizzbuzz } from "./fizzbuzz";
 
 describe('fizzbuzz', () => {
-  const log = jest.spyOn(console, 'log');
+  let log: jest.SpyInstance;
+  beforeAll(() => {
+    log = jest.spyOn(console, 'log');
+  });
+
+  afterEach(() => {
+    log.mockClear();
+  });
 
   test('number', () => {
     const num = 2;
@@ -11,5 +18,13 @@ describe('fizzbuzz', () => {
     for (let i = 0; i < num; i++) {
       expect(log.mock.calls[i][0]).toEqual((i + 1).toString());
     }
+  });
+
+  test('fizz', () => {
+    const num = 3;
+    fizzbuzz(num);
+
+    expect(console.log).toBeCalled();
+    expect(log.mock.calls[2][0]).toEqual('fizz');
   });
 });
