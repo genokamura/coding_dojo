@@ -1,4 +1,6 @@
 export const fizzbuzz = (num: number) => {
   // fizzbuzz
-  console.log('1');
+  for (let i = 1; i <= num; i++) {
+    console.log(i.toString());
+  }
 }
